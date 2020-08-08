@@ -1,0 +1,21 @@
+[package]
+name = "portaudio-sys"
+version = "0.1.1"
+authors = ["Mathijs van de Nes <git@mathijs.vd-nes.nl>"]
+links = "portaudio"
+build = "build.rs"
+description = "Bindings to PortAudio"
+license = "MIT"
+
+[lib]
+name = "portaudio_sys"
+path = "lib.rs"
+
+[build-dependencies]
+pkg-config = "^0.3.3"
+
+[target.'cfg(windows)'.build-dependencies]
+cmake = "0.1"
+
+[dependencies]
+libc = "0.2"
